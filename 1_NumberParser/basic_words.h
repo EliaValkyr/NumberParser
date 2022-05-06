@@ -30,7 +30,7 @@ inline std::vector<std::pair<std::string, int>> GetTeens()
         {"sixteen", 16},
         {"seventeen", 17},
         {"eighteen", 18},
-        {"nineteen", 10}
+        {"nineteen", 19}
     };
     return values;
 }

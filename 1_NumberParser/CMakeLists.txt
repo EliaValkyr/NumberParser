@@ -9,9 +9,5 @@ set(SOURCES
         number_parser.h
         )
 
-# Define the executable
-if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    add_library(NumberParser STATIC ${SOURCES})
-    target_link_libraries(NumberParser ${Boost_LIBRARIES})
-endif()
+# Define the library
+add_library(NumberParser STATIC ${SOURCES})

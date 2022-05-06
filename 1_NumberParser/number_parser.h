@@ -16,6 +16,8 @@ public:
 private:
     std::optional<int> ParseBelow100(std::size_t& current_word_index) const;
     std::optional<int> ParseBelow1000(std::size_t& current_word_index) const;
+    std::optional<int> ParseBelow1000WithKeyword(std::size_t& current_word_index, std::string const& keyword_at_end) const;
+    std::optional<int> ParseAnyNumber(std::size_t& current_word_index) const;
     std::string GetWordAtIndex(std::size_t index) const;
     std::string GetLowercaseWordAtIndex(std::size_t index) const;
 

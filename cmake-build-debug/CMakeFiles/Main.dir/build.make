@@ -100,17 +100,6 @@ Main_EXTERNAL_OBJECTS =
 Main: CMakeFiles/Main.dir/main.cpp.o
 Main: CMakeFiles/Main.dir/build.make
 Main: 1_NumberParser/libNumberParser.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_system.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_filesystem.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_serialization.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_iostreams.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_thread.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_date_time.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_program_options.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_unit_test_framework.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_chrono.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_regex.a
-Main: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_atomic.a
 Main: CMakeFiles/Main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)

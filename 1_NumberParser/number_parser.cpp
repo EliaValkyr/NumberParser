@@ -32,11 +32,14 @@ NumberParser::NumberParser(std::string const& text)
     while (word_index < m_original_split_text.size())
     {
         std::string current_word = GetWordAtIndex(word_index);
-        std::optional<int> current_value = ParseBelow1000(word_index);
+        std::optional<int> current_value = ParseAnyNumber(word_index);
         if (current_value)
             m_modified_split_text.emplace_back(std::to_string(*current_value));
         else
+        {
             m_modified_split_text.emplace_back(current_word);
+            ++word_index;
+        }
     }
 
     std::ostringstream imploded_ss;
@@ -61,7 +64,6 @@ std::string NumberParser::GetLowercaseWordAtIndex(std::size_t index) const
 std::optional<int> NumberParser::ParseBelow100(std::size_t& current_word_index) const
 {
     std::string current_word = GetLowercaseWordAtIndex(current_word_index);
-    ++current_word_index;
 
     std::size_t hyphen_index = current_word.find('-');
     if (hyphen_index != std::string::npos)
@@ -71,20 +73,32 @@ std::optional<int> NumberParser::ParseBelow100(std::size_t& current_word_index) 
         std::optional<int> try_tenth = TryMatch(tenth_text, GetTenths());
         std::optional<int> try_unit = TryMatch(unit_text, GetUnits());
         if (try_tenth && try_unit)
+        {
+            ++current_word_index;
             return *try_tenth + *try_unit;
+        }
     }
 
     std::optional<int> try_unit = TryMatch(current_word, GetUnits());
     if (try_unit)
+    {
+        ++current_word_index;
         return try_unit;
+    }
 
     std::optional<int> try_tenth = TryMatch(current_word, GetTenths());
     if (try_tenth)
+    {
+        ++current_word_index;
         return try_tenth;
+    }
 
     std::optional<int> try_teen = TryMatch(current_word, GetTeens());
     if (try_teen)
+    {
+        ++current_word_index;
         return try_teen;
+    }
 
     return std::nullopt;
 }
@@ -92,33 +106,73 @@ std::optional<int> NumberParser::ParseBelow100(std::size_t& current_word_index) 
 std::optional<int> NumberParser::ParseBelow1000(std::size_t& current_word_index) const
 {
     int result = 0;
-    std::size_t temp_word_index = current_word_index;
 
-    std::optional<int> unit_hundred = ParseUnit(GetLowercaseWordAtIndex(temp_word_index));
-    if (unit_hundred && GetLowercaseWordAtIndex(temp_word_index + 1) == GetHundred())
+    std::optional<int> unit_hundred = ParseUnit(GetLowercaseWordAtIndex(current_word_index));
+    if (unit_hundred && GetLowercaseWordAtIndex(current_word_index + 1) == GetHundred())
     {
         result = *unit_hundred * 100;
-        temp_word_index += 2;
+        current_word_index += 2;
 
-        bool exists_and = GetLowercaseWordAtIndex(temp_word_index) == "and";
+        bool exists_and = GetLowercaseWordAtIndex(current_word_index) == "and";
 
-        std::size_t tenths_index = exists_and ? temp_word_index + 1 : temp_word_index;
+        std::size_t tenths_index = exists_and ? current_word_index + 1 : current_word_index;
 
         std::optional<int> tenths = ParseBelow100(tenths_index);
         if (tenths)
         {
             result += *tenths;
-            temp_word_index = tenths_index;
+            current_word_index = tenths_index;
         }
     }
     else
     {
-        std::optional<int> tenths = ParseBelow100(temp_word_index);
+        std::optional<int> tenths = ParseBelow100(current_word_index);
         if (tenths)
             result += *tenths;
     }
 
-    current_word_index = temp_word_index;
+    return result == 0 ? std::nullopt : std::optional<int>(result);
+}
+
+std::optional<int> NumberParser::ParseBelow1000WithKeyword(std::size_t& current_word_index, std::string const& keyword_at_end) const
+{
+    std::size_t temp_word_index = current_word_index;
+    std::optional<int> value = ParseBelow1000(temp_word_index);
+
+    if (value && GetLowercaseWordAtIndex(temp_word_index) == keyword_at_end)
+    {
+        current_word_index = temp_word_index + 1;
+        return value;
+    }
+
+    return std::nullopt;
+}
+
+std::optional<int> NumberParser::ParseAnyNumber(std::size_t& current_word_index) const
+{
+    int result = 0;
+
+    std::optional<int> millions_amount = ParseBelow1000WithKeyword(current_word_index, GetMillion());
+    if (millions_amount)
+        result += *millions_amount * 1000000;
+
+    std::optional<int> thousands_amount = ParseBelow1000WithKeyword(current_word_index, GetThousand());
+    if (thousands_amount)
+        result += *thousands_amount * 1000;
+
+    // Try to find an "and" before the last units, if we have seen a million or a thousand.
+    bool exists_and = result > 0
+        ? GetLowercaseWordAtIndex(current_word_index) == "and"
+        : false;
+
+    std::size_t unit_word_index = exists_and ? current_word_index + 1 : current_word_index;
+
+    std::optional<int> units_amount = ParseBelow1000(unit_word_index);
+    if (units_amount)
+    {
+        result += *units_amount;
+        current_word_index = unit_word_index;
+    }
 
     return result == 0 ? std::nullopt : std::optional<int>(result);
 }
@@ -128,5 +182,5 @@ std::optional<int> NumberParser::GetNumberAtWordIndex(std::size_t word_index) co
     if (word_index >= m_original_split_text.size())
         return std::nullopt;
 
-    return ParseBelow1000(word_index);
+    return ParseAnyNumber(word_index);
 }

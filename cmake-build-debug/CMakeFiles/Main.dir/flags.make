@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wno-unknown-prag
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/boost_1_68_g++_8.1.0/include 
+CXX_INCLUDES = 
 

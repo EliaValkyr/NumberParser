@@ -100,17 +100,7 @@ UnitTest_EXTERNAL_OBJECTS =
 2_UnitTests/UnitTest: 2_UnitTests/CMakeFiles/UnitTest.dir/unit_test.cpp.o
 2_UnitTests/UnitTest: 2_UnitTests/CMakeFiles/UnitTest.dir/build.make
 2_UnitTests/UnitTest: 1_NumberParser/libNumberParser.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_system.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_filesystem.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_serialization.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_iostreams.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_thread.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_date_time.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_program_options.a
 2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_unit_test_framework.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_chrono.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_regex.a
-2_UnitTests/UnitTest: /usr/local/boost_1_68_g++_8.1.0/lib/libboost_atomic.a
 2_UnitTests/UnitTest: 2_UnitTests/CMakeFiles/UnitTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable UnitTest"
 	cd /home/elia/CLionProjects/NumberParser/cmake-build-debug/2_UnitTests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnitTest.dir/link.txt --verbose=$(VERBOSE)
