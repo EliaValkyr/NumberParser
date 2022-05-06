@@ -64,102 +64,150 @@ RM = /home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/c
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elia/CLionProjects/Test
+CMAKE_SOURCE_DIR = /home/elia/CLionProjects/NumberParser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elia/CLionProjects/Test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/elia/CLionProjects/NumberParser/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Test.dir/all
-all: UnitTests/all
+all: CMakeFiles/Main.dir/all
+all: 1_NumberParser/all
+all: 2_UnitTests/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: UnitTests/preinstall
+preinstall: 1_NumberParser/preinstall
+preinstall: 2_UnitTests/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Test.dir/clean
-clean: UnitTests/clean
+clean: CMakeFiles/Main.dir/clean
+clean: 1_NumberParser/clean
+clean: 2_UnitTests/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory UnitTests
+# Directory level rules for directory 1_NumberParser
 
 # Recursive "all" directory target.
-UnitTests/all: UnitTests/CMakeFiles/UnitTest.dir/all
+1_NumberParser/all: 1_NumberParser/CMakeFiles/NumberParser.dir/all
 
-.PHONY : UnitTests/all
+.PHONY : 1_NumberParser/all
 
 # Recursive "preinstall" directory target.
-UnitTests/preinstall:
+1_NumberParser/preinstall:
 
-.PHONY : UnitTests/preinstall
+.PHONY : 1_NumberParser/preinstall
 
 # Recursive "clean" directory target.
-UnitTests/clean: UnitTests/CMakeFiles/UnitTest.dir/clean
+1_NumberParser/clean: 1_NumberParser/CMakeFiles/NumberParser.dir/clean
 
-.PHONY : UnitTests/clean
+.PHONY : 1_NumberParser/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Test.dir
+# Directory level rules for directory 2_UnitTests
+
+# Recursive "all" directory target.
+2_UnitTests/all: 2_UnitTests/CMakeFiles/UnitTest.dir/all
+
+.PHONY : 2_UnitTests/all
+
+# Recursive "preinstall" directory target.
+2_UnitTests/preinstall:
+
+.PHONY : 2_UnitTests/preinstall
+
+# Recursive "clean" directory target.
+2_UnitTests/clean: 2_UnitTests/CMakeFiles/UnitTest.dir/clean
+
+.PHONY : 2_UnitTests/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Main.dir
 
 # All Build rule for target.
-CMakeFiles/Test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Test"
-.PHONY : CMakeFiles/Test.dir/all
+CMakeFiles/Main.dir/all: 1_NumberParser/CMakeFiles/NumberParser.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Main"
+.PHONY : CMakeFiles/Main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Test.dir/rule
+CMakeFiles/Main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Main.dir/rule
 
 # Convenience name for target.
-Test: CMakeFiles/Test.dir/rule
+Main: CMakeFiles/Main.dir/rule
 
-.PHONY : Test
+.PHONY : Main
 
 # clean rule for target.
-CMakeFiles/Test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/clean
-.PHONY : CMakeFiles/Test.dir/clean
+CMakeFiles/Main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/clean
+.PHONY : CMakeFiles/Main.dir/clean
 
 #=============================================================================
-# Target rules for target UnitTests/CMakeFiles/UnitTest.dir
+# Target rules for target 1_NumberParser/CMakeFiles/NumberParser.dir
 
 # All Build rule for target.
-UnitTests/CMakeFiles/UnitTest.dir/all:
-	$(MAKE) $(MAKESILENT) -f UnitTests/CMakeFiles/UnitTest.dir/build.make UnitTests/CMakeFiles/UnitTest.dir/depend
-	$(MAKE) $(MAKESILENT) -f UnitTests/CMakeFiles/UnitTest.dir/build.make UnitTests/CMakeFiles/UnitTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target UnitTest"
-.PHONY : UnitTests/CMakeFiles/UnitTest.dir/all
+1_NumberParser/CMakeFiles/NumberParser.dir/all:
+	$(MAKE) $(MAKESILENT) -f 1_NumberParser/CMakeFiles/NumberParser.dir/build.make 1_NumberParser/CMakeFiles/NumberParser.dir/depend
+	$(MAKE) $(MAKESILENT) -f 1_NumberParser/CMakeFiles/NumberParser.dir/build.make 1_NumberParser/CMakeFiles/NumberParser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target NumberParser"
+.PHONY : 1_NumberParser/CMakeFiles/NumberParser.dir/all
 
 # Build rule for subdir invocation for target.
-UnitTests/CMakeFiles/UnitTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UnitTests/CMakeFiles/UnitTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles 0
-.PHONY : UnitTests/CMakeFiles/UnitTest.dir/rule
+1_NumberParser/CMakeFiles/NumberParser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 1_NumberParser/CMakeFiles/NumberParser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 0
+.PHONY : 1_NumberParser/CMakeFiles/NumberParser.dir/rule
 
 # Convenience name for target.
-UnitTest: UnitTests/CMakeFiles/UnitTest.dir/rule
+NumberParser: 1_NumberParser/CMakeFiles/NumberParser.dir/rule
+
+.PHONY : NumberParser
+
+# clean rule for target.
+1_NumberParser/CMakeFiles/NumberParser.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 1_NumberParser/CMakeFiles/NumberParser.dir/build.make 1_NumberParser/CMakeFiles/NumberParser.dir/clean
+.PHONY : 1_NumberParser/CMakeFiles/NumberParser.dir/clean
+
+#=============================================================================
+# Target rules for target 2_UnitTests/CMakeFiles/UnitTest.dir
+
+# All Build rule for target.
+2_UnitTests/CMakeFiles/UnitTest.dir/all: 1_NumberParser/CMakeFiles/NumberParser.dir/all
+	$(MAKE) $(MAKESILENT) -f 2_UnitTests/CMakeFiles/UnitTest.dir/build.make 2_UnitTests/CMakeFiles/UnitTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f 2_UnitTests/CMakeFiles/UnitTest.dir/build.make 2_UnitTests/CMakeFiles/UnitTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target UnitTest"
+.PHONY : 2_UnitTests/CMakeFiles/UnitTest.dir/all
+
+# Build rule for subdir invocation for target.
+2_UnitTests/CMakeFiles/UnitTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2_UnitTests/CMakeFiles/UnitTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 0
+.PHONY : 2_UnitTests/CMakeFiles/UnitTest.dir/rule
+
+# Convenience name for target.
+UnitTest: 2_UnitTests/CMakeFiles/UnitTest.dir/rule
 
 .PHONY : UnitTest
 
 # clean rule for target.
-UnitTests/CMakeFiles/UnitTest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f UnitTests/CMakeFiles/UnitTest.dir/build.make UnitTests/CMakeFiles/UnitTest.dir/clean
-.PHONY : UnitTests/CMakeFiles/UnitTest.dir/clean
+2_UnitTests/CMakeFiles/UnitTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 2_UnitTests/CMakeFiles/UnitTest.dir/build.make 2_UnitTests/CMakeFiles/UnitTest.dir/clean
+.PHONY : 2_UnitTests/CMakeFiles/UnitTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
+optional
+-
+string
+-
+vector
+-
+
+/home/elia/CLionProjects/NumberParser/main.cpp
+algorithm
+-
+iostream
+-
+iterator
+-
+optional
+-
+sstream
+-
+vector
+-
+1_NumberParser/number_parser.h
+/home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
+

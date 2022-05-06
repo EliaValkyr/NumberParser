@@ -1,4 +1,4 @@
-# Install script for directory: /home/elia/CLionProjects/Test/UnitTests
+# Install script for directory: /home/elia/CLionProjects/NumberParser/UnitTests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,6 +1,9 @@
-/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/Test.dir
-/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/rebuild_cache.dir
-/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/edit_cache.dir
-/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/UnitTest.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles/Main.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/1_NumberParser/CMakeFiles/edit_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/1_NumberParser/CMakeFiles/rebuild_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/1_NumberParser/CMakeFiles/NumberParser.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/2_UnitTests/CMakeFiles/rebuild_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/2_UnitTests/CMakeFiles/edit_cache.dir
+/home/elia/CLionProjects/NumberParser/cmake-build-debug/2_UnitTests/CMakeFiles/UnitTest.dir

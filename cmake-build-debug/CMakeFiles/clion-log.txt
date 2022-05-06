@@ -1,6 +1,5 @@
-/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/elia/CLionProjects/Test
+/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/elia/CLionProjects/NumberParser
 Found Boost
-/usr/local/boost_1_68_g++_8.1.0/lib/libboost_system.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_filesystem.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_serialization.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_iostreams.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_thread.a;-lpthread;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_date_time.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_program_options.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_unit_test_framework.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_chrono.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_regex.a;/usr/local/boost_1_68_g++_8.1.0/lib/libboost_atomic.a
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/elia/CLionProjects/Test/cmake-build-debug
+-- Build files have been written to: /home/elia/CLionProjects/NumberParser/cmake-build-debug

@@ -36,8 +36,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/share/cmake-3.17/Modules/Platform/Linux.cmake"
   "/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/share/cmake-3.17/Modules/Platform/UnixPaths.cmake"
   "/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/share/cmake-3.17/Modules/ProcessorCount.cmake"
+  "../1_NumberParser/CMakeLists.txt"
+  "../2_UnitTests/CMakeLists.txt"
   "../CMakeLists.txt"
-  "../UnitTests/CMakeLists.txt"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
@@ -52,11 +53,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "UnitTests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "1_NumberParser/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "2_UnitTests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Test.dir/DependInfo.cmake"
-  "UnitTests/CMakeFiles/UnitTest.dir/DependInfo.cmake"
+  "CMakeFiles/Main.dir/DependInfo.cmake"
+  "1_NumberParser/CMakeFiles/NumberParser.dir/DependInfo.cmake"
+  "2_UnitTests/CMakeFiles/UnitTest.dir/DependInfo.cmake"
   )

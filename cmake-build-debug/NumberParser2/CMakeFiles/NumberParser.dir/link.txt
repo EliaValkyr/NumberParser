@@ -1,0 +1,2 @@
+/usr/bin/ar qc libNumberParser.a  CMakeFiles/NumberParser.dir/number_parser.cpp.o
+/usr/bin/ranlib libNumberParser.a

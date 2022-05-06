@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/elia/CLionProjects/Test/main.cpp
+/home/elia/CLionProjects/NumberParser/main.cpp
 iostream
 -
 sstream

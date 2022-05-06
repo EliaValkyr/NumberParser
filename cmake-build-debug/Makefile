@@ -68,24 +68,13 @@ RM = /home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/c
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elia/CLionProjects/Test
+CMAKE_SOURCE_DIR = /home/elia/CLionProjects/NumberParser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elia/CLionProjects/Test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/elia/CLionProjects/NumberParser/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -98,11 +87,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/elia/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elia/CLionProjects/NumberParser/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,17 +131,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Test
+# Target rules for targets named Main
 
 # Build rule for target.
-Test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test
-.PHONY : Test
+Main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Main
+.PHONY : Main
 
 # fast build rule for target.
-Test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-.PHONY : Test/fast
+Main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
+.PHONY : Main/fast
+
+#=============================================================================
+# Target rules for targets named NumberParser
+
+# Build rule for target.
+NumberParser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NumberParser
+.PHONY : NumberParser
+
+# fast build rule for target.
+NumberParser/fast:
+	$(MAKE) $(MAKESILENT) -f 1_NumberParser/CMakeFiles/NumberParser.dir/build.make 1_NumberParser/CMakeFiles/NumberParser.dir/build
+.PHONY : NumberParser/fast
 
 #=============================================================================
 # Target rules for targets named UnitTest
@@ -153,7 +166,7 @@ UnitTest: cmake_check_build_system
 
 # fast build rule for target.
 UnitTest/fast:
-	$(MAKE) $(MAKESILENT) -f UnitTests/CMakeFiles/UnitTest.dir/build.make UnitTests/CMakeFiles/UnitTest.dir/build
+	$(MAKE) $(MAKESILENT) -f 2_UnitTests/CMakeFiles/UnitTest.dir/build.make 2_UnitTests/CMakeFiles/UnitTest.dir/build
 .PHONY : UnitTest/fast
 
 main.o: main.cpp.o
@@ -162,7 +175,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -171,7 +184,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -180,7 +193,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -191,7 +204,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Test"
+	@echo "... Main"
+	@echo "... NumberParser"
 	@echo "... UnitTest"
 	@echo "... main.o"
 	@echo "... main.i"
