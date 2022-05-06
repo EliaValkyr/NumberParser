@@ -1,0 +1,6 @@
+/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/elia/CLionProjects/Test/cmake-build-debug/CMakeFiles/Test.dir
+/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/rebuild_cache.dir
+/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/edit_cache.dir
+/home/elia/CLionProjects/Test/cmake-build-debug/UnitTests/CMakeFiles/UnitTest.dir
