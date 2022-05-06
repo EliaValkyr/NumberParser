@@ -4,6 +4,7 @@ project(NumberParser)
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
+        basic_words.h
         number_parser.cpp
         number_parser.h
         )

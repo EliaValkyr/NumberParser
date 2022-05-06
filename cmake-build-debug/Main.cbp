@@ -182,6 +182,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/elia/CLionProjects/NumberParser/1_NumberParser/basic_words.h">
+			<Option target="NumberParser"/>
+		</Unit>
 		<Unit filename="/home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.cpp">
 			<Option target="NumberParser"/>
 		</Unit>
@@ -189,9 +192,6 @@
 			<Option target="NumberParser"/>
 		</Unit>
 		<Unit filename="/home/elia/CLionProjects/NumberParser/2_UnitTests/unit_test.cpp">
-			<Option target="UnitTest"/>
-		</Unit>
-		<Unit filename="/home/elia/CLionProjects/NumberParser/basic_words.h">
 			<Option target="UnitTest"/>
 		</Unit>
 		<Unit filename="/home/elia/CLionProjects/NumberParser/main.cpp">

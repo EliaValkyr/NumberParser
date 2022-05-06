@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/elia/CLionProjects/NumberParser/1_NumberParser/basic_words.h
+string
+-
+vector
+-
+
 /home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.cpp
 number_parser.h
 /home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
@@ -15,18 +21,12 @@ iterator
 -
 sstream
 -
-../basic_words.h
-/home/elia/CLionProjects/NumberParser/basic_words.h
+basic_words.h
+/home/elia/CLionProjects/NumberParser/1_NumberParser/basic_words.h
 
 /home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
 optional
 -
-string
--
-vector
--
-
-/home/elia/CLionProjects/NumberParser/basic_words.h
 string
 -
 vector

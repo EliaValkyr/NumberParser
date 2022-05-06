@@ -69,9 +69,6 @@
 		<Unit filename="/home/elia/CLionProjects/NumberParser/2_UnitTests/unit_test.cpp">
 			<Option target="UnitTest"/>
 		</Unit>
-		<Unit filename="/home/elia/CLionProjects/NumberParser/basic_words.h">
-			<Option target="UnitTest"/>
-		</Unit>
 		<Unit filename="/home/elia/CLionProjects/NumberParser/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -4,7 +4,7 @@
 #include <iterator>
 #include <sstream>
 
-#include "../basic_words.h"
+#include "basic_words.h"
 
 namespace {
 
@@ -14,14 +14,55 @@ std::optional<int> TryMatch(std::string const& current_word, std::vector<std::pa
     return it == possible_values.end() ? std::nullopt : std::optional<int>(it->second);
 }
 
-//std::optional<int> ParseUnit(std::string const& current_word)
-//{
-//    std::vector<std::pair<std::string, int>> units = GetUnits();
-//    return TryMatch(current_word, units);
-//}
-
-std::optional<int> ParseDU(std::string const& current_word)
+std::optional<int> ParseUnit(std::string const& current_word)
 {
+    std::vector<std::pair<std::string, int>> units = GetUnits();
+    return TryMatch(current_word, units);
+}
+
+}
+
+NumberParser::NumberParser(std::string const& text)
+    : m_original_text(text)
+{
+    std::istringstream iss(m_original_text);
+    m_original_split_text = std::vector<std::string>((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
+
+    std::size_t word_index = 0;
+    while (word_index < m_original_split_text.size())
+    {
+        std::string current_word = GetWordAtIndex(word_index);
+        std::optional<int> current_value = ParseBelow1000(word_index);
+        if (current_value)
+            m_modified_split_text.emplace_back(std::to_string(*current_value));
+        else
+            m_modified_split_text.emplace_back(current_word);
+    }
+
+    std::ostringstream imploded_ss;
+    std::copy(m_modified_split_text.begin(), m_modified_split_text.end(), std::ostream_iterator<std::string>(imploded_ss, " "));
+    m_modified_text = imploded_ss.str();
+    if (!m_modified_text.empty())
+        m_modified_text.pop_back();
+}
+
+std::string NumberParser::GetWordAtIndex(std::size_t index) const
+{
+    return index >= m_original_split_text.size() ? "" : m_original_split_text[index];
+}
+
+std::string NumberParser::GetLowercaseWordAtIndex(std::size_t index) const
+{
+    std::string word = GetWordAtIndex(index);
+    std::transform(word.begin(), word.end(), word.begin(), [](unsigned char c){ return std::tolower(c); });
+    return word;
+}
+
+std::optional<int> NumberParser::ParseBelow100(std::size_t& current_word_index) const
+{
+    std::string current_word = GetLowercaseWordAtIndex(current_word_index);
+    ++current_word_index;
+
     std::size_t hyphen_index = current_word.find('-');
     if (hyphen_index != std::string::npos)
     {
@@ -48,26 +89,38 @@ std::optional<int> ParseDU(std::string const& current_word)
     return std::nullopt;
 }
 
-}
-
-NumberParser::NumberParser(std::string const& text)
-    : m_original_text(text)
+std::optional<int> NumberParser::ParseBelow1000(std::size_t& current_word_index) const
 {
-    std::istringstream iss(m_original_text);
-    m_original_split_text = std::vector<std::string>((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
+    int result = 0;
+    std::size_t temp_word_index = current_word_index;
 
-    for (std::string const& og_word : m_original_split_text)
+    std::optional<int> unit_hundred = ParseUnit(GetLowercaseWordAtIndex(temp_word_index));
+    if (unit_hundred && GetLowercaseWordAtIndex(temp_word_index + 1) == GetHundred())
     {
-        std::optional<int> word_value = ParseDU(og_word);
-        if (word_value)
-            m_modified_split_text.emplace_back(std::to_string(*word_value));
-        else
-            m_modified_split_text.emplace_back(og_word);
+        result = *unit_hundred * 100;
+        temp_word_index += 2;
+
+        bool exists_and = GetLowercaseWordAtIndex(temp_word_index) == "and";
+
+        std::size_t tenths_index = exists_and ? temp_word_index + 1 : temp_word_index;
+
+        std::optional<int> tenths = ParseBelow100(tenths_index);
+        if (tenths)
+        {
+            result += *tenths;
+            temp_word_index = tenths_index;
+        }
+    }
+    else
+    {
+        std::optional<int> tenths = ParseBelow100(temp_word_index);
+        if (tenths)
+            result += *tenths;
     }
 
-    std::ostringstream imploded_ss;
-    std::copy(m_modified_split_text.begin(), m_modified_split_text.end(), std::ostream_iterator<std::string>(imploded_ss, " "));
-    m_modified_text = imploded_ss.str();
+    current_word_index = temp_word_index;
+
+    return result == 0 ? std::nullopt : std::optional<int>(result);
 }
 
 std::optional<int> NumberParser::GetNumberAtWordIndex(std::size_t word_index) const
@@ -75,5 +128,5 @@ std::optional<int> NumberParser::GetNumberAtWordIndex(std::size_t word_index) co
     if (word_index >= m_original_split_text.size())
         return std::nullopt;
 
-    return ParseDU(m_original_split_text[word_index]);
+    return ParseBelow1000(word_index);
 }
