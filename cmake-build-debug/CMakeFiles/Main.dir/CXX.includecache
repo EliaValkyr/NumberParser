@@ -6,3 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
+optional
+-
+string
+-
+vector
+-
+
+/home/elia/CLionProjects/NumberParser/main.cpp
+iostream
+-
+1_NumberParser/number_parser.h
+/home/elia/CLionProjects/NumberParser/1_NumberParser/number_parser.h
+

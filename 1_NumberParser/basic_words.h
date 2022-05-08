@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+/// Returns the words for the units, together with their value.
 inline std::vector<std::pair<std::string, int>> GetUnits()
 {
     static std::vector<std::pair<std::string, int>> values = {
@@ -19,6 +20,7 @@ inline std::vector<std::pair<std::string, int>> GetUnits()
     return values;
 }
 
+/// Returns the words for the teens, together with their value.
 inline std::vector<std::pair<std::string, int>> GetTeens()
 {
     static std::vector<std::pair<std::string, int>> values = {
@@ -35,6 +37,7 @@ inline std::vector<std::pair<std::string, int>> GetTeens()
     return values;
 }
 
+/// Returns the words for the tenths, together with their value.
 inline std::vector<std::pair<std::string, int>> GetTenths()
 {
     static std::vector<std::pair<std::string, int>> values = {
@@ -51,22 +54,14 @@ inline std::vector<std::pair<std::string, int>> GetTenths()
     return values;
 }
 
-inline std::string GetAnd()
-{
-    return "and";
-}
+/// Returns the keyword for and.
+inline std::string GetAnd() { return "and"; }
 
-inline std::string GetHundred()
-{
-    return "hundred";
-}
+/// Returns the keyword for hundred.
+inline std::string GetHundred() { return "hundred"; }
 
-inline std::string GetThousand()
-{
-    return "thousand";
-}
+/// Returns the keyword for thousand.
+inline std::string GetThousand() { return "thousand"; }
 
-inline std::string GetMillion()
-{
-    return "million";
-}
+/// Returns the keyword for million.
+inline std::string GetMillion() { return "million"; }

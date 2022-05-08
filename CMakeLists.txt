@@ -4,7 +4,7 @@ project(Main)
 set(CMAKE_CXX_STANDARD 17)
 
 # Treat all warnings as errors
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wno-unknown-pragmas -Wno-deprecated-declarations")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wuninitialized -Winit-self")
 
 set(SOURCES
         main.cpp

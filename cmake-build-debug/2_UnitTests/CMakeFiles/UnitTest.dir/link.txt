@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wno-unknown-pragmas -Wno-deprecated-declarations -g   CMakeFiles/UnitTest.dir/unit_test.cpp.o  -o UnitTest  ../1_NumberParser/libNumberParser.a /usr/local/boost_1_68_g++_8.1.0/lib/libboost_unit_test_framework.a 
+/usr/bin/c++   -Wall -Wextra -Werror -Wuninitialized -Winit-self -g   CMakeFiles/UnitTest.dir/unit_test.cpp.o  -o UnitTest  ../1_NumberParser/libNumberParser.a /usr/local/boost_1_68_g++_8.1.0/lib/libboost_unit_test_framework.a 
